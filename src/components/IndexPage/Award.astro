@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import certificadoGastroFlow from "../../assets/certificado_gastroFlow.jpeg";
+import fotoPremiacao from "../../assets/foto_premiacao.jpeg";
+---
+
+<section class="py-24 px-4 flex flex-col items-center gap-14">
+  <!-- Título -->
+  <div class="border-2 border-dashed border-primary px-6 py-2">
+    <h2 class="text-3xl font-bold tracking-wide">Prêmios & Reconhecimentos</h2>
+  </div>
+
+  <div class="w-full max-w-4xl flex flex-col gap-12">
+    <article
+      class="border-2 border-dashed p-6 flex flex-col lg:flex-row gap-1 items-start"
+    >
+      <div class="w-full lg:w-7/12 flex flex-col items-center">
+        <div class="relative group cursor-pointer">
+          <div
+            class="border-2 border-dashed border-primary p-2 bg-base-100 shadow-lg"
+          >
+            <img
+              src={certificadoGastroFlow.src}
+              alt="Certificado GastroFlow"
+              class="glightbox
+               w-full object-contain
+               max-h-64 md:max-h-80 lg:max-h-96
+               mx-auto"
+            />
+
+            <div class="text-center mt-2 text-sm text-secondary">
+              Clique para expandir
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:w-5/12 flex flex-col items-center">
+        <div class="relative group cursor-pointer">
+          <div
+            class="border-2 border-dashed border-primary p-2 bg-base-100 shadow-lg"
+          >
+            <img
+              src={fotoPremiacao.src}
+              alt="Foto Premiação"
+              class="glightbox
+               w-full object-contain
+               max-h-64 md:max-h-80 lg:max-h-96
+               mx-auto"
+            />
+
+            <div class="text-center mt-2 text-sm text-secondary">
+              Clique para expandir
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<script>
+  import GLightbox from "glightbox";
+  import "glightbox/dist/css/glightbox.css";
+
+  const lightbox = GLightbox({
+    selector: ".glightbox",
+    touchNavigation: true,
+    loop: false,
+    zoomable: true,
+    draggable: true,
+    openEffect: "zoom",
+    closeEffect: "fade",
+  });
+</script>
